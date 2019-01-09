@@ -1,9 +1,9 @@
-<template>
+<template >
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <router-link to="/login" exact>Login</router-link>
-    <router-link to="/register" exact>Register</router-link>
+    <router-link to="/register" v-if="false" exact>Register</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -12,6 +12,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Login from './components/Login.vue'
 import Register from './components/Register.vue'
+import home from './components/home.vue'
 
 export default {
   name: 'app',

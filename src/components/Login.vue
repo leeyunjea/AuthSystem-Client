@@ -56,12 +56,24 @@ export default {
     onSubmit() {
       //console.log(this.user.userId)
       //console.log(this.user.password)
-      axios.post("http://localhost:8082/api/login", this.user)
+      axios
+        .post("http://localhost:8082/api/login", this.user)
         // .then(response => response.data)
-        .then(response => response.data)
+        .then(response => response.data, this.goToPages())
         .catch(e => {
-             this.errors.push(e);
+          this.errors.push(e);
         });
+    },
+    goToPages() {
+      //   this.$router.push({
+      //     name: 'home'
+      //   });
+
+    //   this.$router.beforeEach(function(home, Login, onSubmit) {
+    //     next();
+    //   });
+
+    this.$router.replace(this.$route.query.redirect || '/home')
     }
   }
 };
