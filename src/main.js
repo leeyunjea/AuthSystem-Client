@@ -2,17 +2,18 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 
-// import axios from 'axios'
-// import VueAxios from 'vue-axios'
 
+import VueResource from 'vue-resource';
 
-// Vue.use(VueAxios, axios)
-
-// Vue.prototype.$http = axios 
+Vue.use(VueResource);
 
 Vue.config.productionTip = false
 
+
 new Vue({
   render: h => h(App),
+  el : '#app',
+  template : '<App/>',
+  components : {App},
   router
 }).$mount('#app')

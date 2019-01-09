@@ -1,13 +1,15 @@
 
 <template>
   <div class="hello">
-    <h2>Log In</h2>
-      <form @submit.prevent="onSubmit">
+    <h2>Register</h2>
+      <form @submit="onSubmit">
           <input placeholder="Enter your ID" v-model="user.userId">
           <input placeholder="Enter your password" v-model="user.password">
+          <input placeholder="Enter your name" v-model="user.name">
+          <input placeholder="Enter your email" v-model="user.email">
 
 
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
       </form>
     
 
@@ -27,16 +29,12 @@
 
 </template>
 
-<add key="webpages:Enabled" value="true" /> 
-
 <script>
 import axios from "axios";
-// import VueAxios from 'vue-axios'
 
-// Vue.use(VueAxios, axios)
 
 export default {
-  name: "Login",
+  name: "Register",
   props: {
     msg: String
   },
@@ -47,20 +45,21 @@ export default {
         userId: "",
         password: "",
         name: "",
-        email: ""
+        email:""
       }
     };
   },
+
+  
 
   methods: {
     onSubmit() {
       //console.log(this.user.userId)
       //console.log(this.user.password)
-      axios.post("http://localhost:8082/api/login", this.user)
-        // .then(response => response.data)
+      axios.post("http://localhost:8082/api/register", this.user)
         .then(response => response.data)
         .catch(e => {
-             this.errors.push(e);
+          this.errors.push(e);
         });
     }
   }

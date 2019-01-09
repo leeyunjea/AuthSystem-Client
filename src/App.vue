@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <router-link to="/login" exact>Login</router-link>
+    <router-link to="/register" exact>Register</router-link>
     <router-view></router-view>
   </div>
 </template>
@@ -10,6 +11,7 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Login from './components/Login.vue'
+import Register from './components/Register.vue'
 
 export default {
   name: 'app',
