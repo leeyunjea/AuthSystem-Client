@@ -4,7 +4,8 @@
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>
+  
     </p>
   </div>
 
@@ -12,21 +13,30 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
     msg: String
-  }//,
+  } //,
+  //   methods: {
+  //     login: function (event) {
+  //       // 메소드 안에서 사용하는 `this` 는 Vue 인스턴스를 가리킵니다
+  //       alert('Hello ' + this.name + '!')
+  //       // `event` 는 네이티브 DOM 이벤트입니다
+  //       if (event) {
+  //         alert(event.target.tagName)
+  //       }
+  //     }
+  //   },
 //   methods: {
-//     login: function (event) {
-//       // 메소드 안에서 사용하는 `this` 는 Vue 인스턴스를 가리킵니다
-//       alert('Hello ' + this.name + '!')
-//       // `event` 는 네이티브 DOM 이벤트입니다
-//       if (event) {
-//         alert(event.target.tagName)
-//       }
+//     clickBtn(event) {
+//       $(event.target).button("loading");
+
+//       setTimeout(function() {
+//         $(event.target).button("reset");
+//       }, 1000);
 //     }
-//   }
-}
+  
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

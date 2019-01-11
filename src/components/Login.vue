@@ -81,6 +81,8 @@ export default {
         .then(response => {
             if(response.data['password']) {
               localStorage.setItem('auth_token', response.data['password']);
+              localStorage.setItem('userId', this.user.userId);
+            //   this.toggleLogin();
               location.href = './home';
               
             } else {

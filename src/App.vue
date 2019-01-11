@@ -2,8 +2,11 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <router-link to="/login" exact>Login</router-link>
-    <router-link to="/register" exact>Register</router-link> 
+
+  
+
+    <router-link to="/login" v-if="!isLogin" exact>Login</router-link>
+    <router-link to="/register" v-if="!isSignUp" exact>Register</router-link> 
     <!-- v-if="false"  -->
     <router-view></router-view>
   </div>
@@ -43,19 +46,19 @@ export default {
     HelloWorld
   },
 
-//   data: {
-//     // isLogin: false
-//     isSignUp: false
-//   }
+  data: {
+    isLogin: true,
+    isSignUp: true
+  },
 
-//   methods: {
-//     // toggleLogin() {
-//     //   this.isLogin = !this.isLogin;
-//     // },
-//     toggleSignUp() {
-//       this.isSignUp = !this.isSignUp;
-//     }
-//   }
+  methods: {
+    toggleLogin() {
+      this.isLogin = !this.isLogin;
+    },
+    toggleSignUp() {
+      this.isSignUp = !this.isSignUp;
+    }
+  }
 };
 </script>
 

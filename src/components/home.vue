@@ -9,6 +9,9 @@
 
     {{message}}
 
+    <br>
+    <button v-if="isAdmin">Admin</button>
+
   </div>
 
 </template>
@@ -27,7 +30,8 @@ export default {
 
   data: {
     message: "안녕하세요 Vue!",
-    token: ''
+    token: '',
+    isAdmin: true
   },
 
   created() {
@@ -50,6 +54,11 @@ export default {
           console.log(localStorage.getItem("helloWorld"));
           var helloWorld = localStorage.getItem("helloWorld");
           this.message = helloWorld;
+          debugger;
+          if(localStorage.getItem('userId') == "admin") {
+              this.isAdmin = !this.isAdmin;
+              location.href = "./admin";
+          }
           //   location.href = "./home";
         } else {
           //   app.renderNotification('Successfully Singed Up');
