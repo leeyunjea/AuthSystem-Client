@@ -3,30 +3,86 @@
     <h1>{{ msg }}</h1>
     
     <p>
-      URL Shortening
-      <a href="https://localhost:8080/" target="_blank" rel="noopener">url-shortening</a>.
+      API Server
     </p>
+  <!-- <component :is="component" :data="data" v-if="component" /> -->
+
+    {{message}}
 
   </div>
 
 </template>
 
+
 <script>
+import axios from "axios";
+
 export default {
   name: "home",
   props: {
-    msg: String
-  } //,
-  //   methods: {
-  //     login: function (event) {
-  //       // 메소드 안에서 사용하는 `this` 는 Vue 인스턴스를 가리킵니다
-  //       alert('Hello ' + this.name + '!')
-  //       // `event` 는 네이티브 DOM 이벤트입니다
-  //       if (event) {
-  //         alert(event.target.tagName)
-  //       }
-  //     }
-  //   }
+    msg: String,
+    message: String,
+    token: String
+  },
+
+  data: {
+    message: "안녕하세요 Vue!",
+    token: ''
+  },
+
+  created() {
+    debugger;
+    var tokenId = localStorage.getItem("auth_token");
+    this.token = tokenId;
+    console.log("token = " + this.token);
+
+    if (!tokenId) {
+      location.href = "./login";
+    }
+    // this.fetchData(token);
+    debugger;
+    axios
+      .post("http://localhost:8089/", tokenId)
+      .then(response => {
+        debugger;
+        if (response.data) {
+          localStorage.setItem("helloWorld", response.data);
+          console.log(localStorage.getItem("helloWorld"));
+          var helloWorld = localStorage.getItem("helloWorld");
+          this.message = helloWorld;
+          //   location.href = "./home";
+        } else {
+          //   app.renderNotification('Successfully Singed Up');
+          //   app.toggleSignUp();
+          this.errors.push(e);
+        }
+      })
+      .catch(e => {
+        debugger;
+        // location.href = "./login";
+        this.errors.push(e);
+      });
+  },
+
+  methods: {
+    //   fetchData(token) {
+    //     axios({
+    //       method: 'get',
+    //       url: 'http://localhost:8081/api/login',
+    //       headers: { 'Authorization': `Bearer ${token}` }
+    //     })
+    //     .then(response => {
+    //       this.records = response.data.records;
+    //     })
+    //     .catch(error => {
+    //       if (error.ersponse.status === 401) {
+    //         localStorage.removeItem('auth_token');
+    //         location.href = './login.html';
+    //       }
+    //       // handle error
+    //     });
+    //   }
+  }
 };
 </script>
 
@@ -46,5 +102,4 @@ li {
 a {
   color: #42b983;
 }
-
 </style>

@@ -6,10 +6,6 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-<!--     
-    <button v-on:click="login">로그인</button>
-
-    <button>회원가입</button> -->
   </div>
 
 </template>

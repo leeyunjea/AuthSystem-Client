@@ -57,10 +57,14 @@ export default {
       //console.log(this.user.userId)
       //console.log(this.user.password)
       axios.post("http://localhost:8082/api/register", this.user)
-        .then(response => response.data)
+        .then(response => response.data, this.goToPages())
         .catch(e => {
           this.errors.push(e);
         });
+    },
+    goToPages() {
+
+    this.$router.replace(this.$route.query.redirect || '/login')
     }
   }
 };

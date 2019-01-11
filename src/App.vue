@@ -3,28 +3,65 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <router-link to="/login" exact>Login</router-link>
-    <router-link to="/register" v-if="false" exact>Register</router-link>
+    <router-link to="/register" exact>Register</router-link> 
+    <!-- v-if="false"  -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import Login from './components/Login.vue'
-import Register from './components/Register.vue'
-import home from './components/home.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import Login from "./components/Login.vue";
+import Register from "./components/Register.vue";
+import home from "./components/home.vue";
+
+// const app = new Vue({
+//   el: '#app',
+
+//   components: {
+//     HelloWorld
+//   },
+
+//   data: {
+//     isSignUp: false,
+//     isLogin: false,
+//   },
+
+//   methods: {
+//     toggleSignUp() {
+//       this.isSignUp = !this.isSignUp;
+//     },
+//     toggleLogin() {
+//       this.isLogin = !this.isLogin;
+//     }
+//   }
+// })
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     HelloWorld
-  }
-}
+  },
+
+//   data: {
+//     // isLogin: false
+//     isSignUp: false
+//   }
+
+//   methods: {
+//     // toggleLogin() {
+//     //   this.isLogin = !this.isLogin;
+//     // },
+//     toggleSignUp() {
+//       this.isSignUp = !this.isSignUp;
+//     }
+//   }
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
