@@ -37,3 +37,16 @@ npm run lint
 # AuthSystem-Client
 AuthSystem-Client
 >>>>>>> branch 'master' of https://github.com/leeyunjea/AuthSystem-Client.git
+
+#### AuthServer - Spring boot
+  * Login
+  * Sing Up
+  * Admin
+#### TestAPIServer - Spring boot
+  * helloworld
+  
+#### Client - vue js
+
+### [AuthSystem-Architecture]
+
+![AuthServer Architecture](./AuthSystem.png)
