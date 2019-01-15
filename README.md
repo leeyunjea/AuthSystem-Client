@@ -49,4 +49,4 @@ AuthSystem-Client
 
 ### [AuthSystem-Architecture]
 
-![AuthServer Architecture](./AuthServer.png)
+![AuthServer Architecture](./AuthSystem.png)
