@@ -33,7 +33,6 @@ npm run test
 ```
 npm run lint
 ```
-=======
 # AuthSystem-Client
 AuthSystem-Client
 >>>>>>> branch 'master' of https://github.com/leeyunjea/AuthSystem-Client.git
